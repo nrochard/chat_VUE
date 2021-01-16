@@ -73,7 +73,6 @@ const users = {
       </div>
       <div class="card-footer"></div>
     </div>
-    </div>
     `,
   };
   

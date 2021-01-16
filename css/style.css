@@ -212,7 +212,7 @@ ul .nav-item:nth-child(4){
 .type_msg{
     background-color: white !important;
     border:0 !important;
-    color:white !important;
+    color:black !important;
     height: 60px !important;
     overflow-y: auto;
 }
