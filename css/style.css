@@ -430,3 +430,7 @@ ul .nav-item:nth-child(4){
 .alert{
     margin-top: 50px;
 }
+
+.alert-light{
+    color: #333 !important;
+}

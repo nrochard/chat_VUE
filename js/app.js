@@ -7,4 +7,8 @@ Vue.createApp({
     chat,
     notification
   },
+  mounted() {
+    var randomName = faker.name.findName();
+    console.log(randomName)
+  }
 }).mount("#app");

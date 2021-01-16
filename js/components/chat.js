@@ -4,7 +4,6 @@ import users from "./users.js";
 const chat = {
   data() {
     return {
-      message: "lorem",
     };
   },
   components: {
