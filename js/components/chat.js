@@ -4,6 +4,7 @@ import users from "./users.js";
 const chat = {
   data() {
     return {
+ 
     };
   },
   components: {

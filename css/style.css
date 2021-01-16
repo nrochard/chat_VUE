@@ -432,5 +432,8 @@ ul .nav-item:nth-child(4){
 }
 
 .alert-light{
-    color: #333 !important;
+    color: #2071db !important;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 500;
+    display: none;
 }
