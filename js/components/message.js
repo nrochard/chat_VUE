@@ -2,12 +2,38 @@ const message = {
     data() {
       return {
         message : "",
+        messages : [],
+        myUser : ""
       };
     },
+
     methods:{
       sendMessage(){
+        const newMessage = {
+          id: Date.now(),
+          message : this.message,
+          date : this.getDate(),
+          username : this.myUser,
+        }
+        
+        this.messages.push(newMessage);
+        console.log(this.messages)
+        this.message = "";
+      },
+      getDate(d = new Date) {
+        console.log(d)
+        let month = String(d.getMonth() + 1);
+        let day = String(d.getDate());
+        const year = String(d.getFullYear());
       
+        if (month.length < 2) month = '0' + month;
+        if (day.length < 2) day = '0' + day;
+      
+        return `${day}/${month}/${year} à ${d.getHours()}:${(d.getMinutes()<10?'0':'') + d.getMinutes()}`;
       }
+    },
+    mounted(){
+      this.myUser = faker.name.findName();
     },
     template: `
     <div class="card">
@@ -15,85 +41,22 @@ const message = {
       <div class="d-flex bd-highlight">
         <div class="user_info">
           <span>Chat des DEV - 2ème année</span>
-          <p>185 messages</p>
+          <p>{{ this.messages.length }} messages</p>
         </div>
         <div class="video_cam">
           <span><i class="fas fa-video"></i></span>
           <span><i class="fas fa-phone"></i></span>
         </div>
       </div>
-      <span id="action_menu_btn"><i class="fas fa-ellipsis-v"></i></span>
-      <div class="action_menu">
-        <ul>
-          <li><i class="fas fa-user-circle"></i> View profile</li>
-          <li><i class="fas fa-users"></i> Add to close friends</li>
-          <li><i class="fas fa-plus"></i> Add to group</li>
-          <li><i class="fas fa-ban"></i> Block</li>
-        </ul>
-      </div>
     </div>
     <div class="card-body msg_card_body">
-      <div class="d-flex justify-content-start mb-4">
+      <div class="d-flex justify-content-start mb-5" v-for="message in messages">
         <div class="img_cont_msg">
           <img src="img/account.png" class="rounded-circle user_img_msg">
         </div>
         <div class="msg_cotainer">
-          Salut, comment ça va ?
-          <span class="msg_time">10:17</span>
-        </div>
-      </div>
-      <div class="d-flex justify-content-end mb-4">
-        <div class="msg_cotainer_send">
-          Salut, je vais bien et toi ?
-          <span class="msg_time_send">10:20</span>
-        </div>
-        <div class="img_cont_msg">
-      <img src="img/account.png" class="rounded-circle user_img_msg">
-        </div>
-      </div>
-      <div class="d-flex justify-content-start mb-4">
-        <div class="img_cont_msg">
-          <img src="img/account.png" class="rounded-circle user_img_msg">
-        </div>
-        <div class="msg_cotainer">
-          Je vais bien, je suis en train de finir le projet en Node.JS.
-          <span class="msg_time">10:32</span>
-        </div>
-      </div>
-      <div class="d-flex justify-content-end mb-4">
-        <div class="msg_cotainer_send">
-          Ah, moi aussi ! Mais j'ai presque terminé !
-          <span class="msg_time_send">10:33</span>
-        </div>
-        <div class="img_cont_msg">
-      <img src="img/account.png" class="rounded-circle user_img_msg">
-        </div>
-      </div>
-      <div class="d-flex justify-content-start mb-4">
-        <div class="img_cont_msg">
-          <img src="img/account.png" class="rounded-circle user_img_msg">
-        </div>
-        <div class="msg_cotainer">
-          Cool, je cherche une idée de design. 
-          <span class="msg_time">10:34</span>
-        </div>
-      </div>
-      <div class="d-flex justify-content-end mb-4">
-        <div class="msg_cotainer_send">
-          Bon courage alors, à bientôt !
-          <span class="msg_time_send">10:35</span>
-        </div>
-        <div class="img_cont_msg">
-    <img src="img/account.png" class="rounded-circle user_img_msg">
-        </div>
-      </div>
-      <div class="d-flex justify-content-start mb-4">
-        <div class="img_cont_msg">
-          <img src="img/account.png" class="rounded-circle user_img_msg">
-        </div>
-        <div class="msg_cotainer">
-          Merci, à la prochaine :)
-          <span class="msg_time">10:45</span>
+          {{ message.message }}
+          <span class="msg_time">{{ message.date }} de {{ message.username }}</span>
         </div>
       </div>
     </div>
