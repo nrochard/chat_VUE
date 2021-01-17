@@ -31,5 +31,5 @@ In this chat you can :
 ## What it looks like
 
 <p align="center">
-  <img width="750" height="420" src="https://github.com/nrochard/chat_VUE/blob/master/img/screen.png">
+  <img width="1000" height="550" src="https://github.com/nrochard/chat_VUE/blob/master/img/screen.png">
 </p>
