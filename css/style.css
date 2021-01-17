@@ -141,7 +141,7 @@ ul .nav-item:nth-child(4){
 /* GÉNÉRAL */
 
 .middle_center{
-    /* min-height: 80vh !important; */
+    /* min-height: 0vh !important; */
     display: flex !important;
     flex-direction: column !important ;
     justify-content: center !important;
@@ -429,7 +429,8 @@ ul .nav-item:nth-child(4){
 }
 
 .alert{
-    margin-top: 50px;
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
 }
 
 .alert-light{
@@ -441,4 +442,9 @@ ul .nav-item:nth-child(4){
 
 .container .card {
     height: auto !important;
+}
+
+.container_notification{
+    height: 100px;
+    padding-top: 50px;
 }

@@ -13,34 +13,17 @@ Vue.createApp({
     chat,
     notification
   },
-  methods: {
-    startChat(){
-      // var names = [];
-      // document.querySelector(".middle_center").style.display = "block";
-      // document.querySelector(".container").style.display = "none";
-    //   setInterval(function()
-    //   {
-    //     this.newUser = faker.name.findName();
-    //     console.log(this.newUser);
+  mounted(){
+    setInterval(function()
+    {
+      let notification = document.querySelector('#notification');
+      notification.style.display = "block";
 
-    //     const user = {
-    //       id: Date.now(),
-    //       username: this.newUser,
-    //     }
+      setTimeout(function(){
+        notification.style.display = "none";
+      },2000)
 
-    //     names.push(user);
-    //     this.users = names;
-    //     console.log(this.users);
-
-    //     let notification = document.querySelector('#notification');
-    //     notification.style.display = "block";
-
-    //     setTimeout(function(){
-    //       notification.style.display = "none";
-    //     },3000)
-
-    //   }, 6000);
-    }
+    }, 5000);
   },
 }).mount("#app");
 

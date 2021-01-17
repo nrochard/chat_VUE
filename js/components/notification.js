@@ -8,7 +8,7 @@ const notification = {
   props: ['username'],
   template: `
   <div class="container alert alert-light" role="alert">
-  {{ username }} vient de nous rejoindre !
+  Un nouvel arrivant vient de nous rejoindre !
   </div>
   `,
 };
