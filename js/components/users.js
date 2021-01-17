@@ -10,7 +10,7 @@ const users = {
       user
     },
     mounted(){
-      setInterval(this.connectedUser, 5000);
+      setInterval(this.connectedUser, 7000);
     },
     methods: {
       connectedUser() {
@@ -18,10 +18,7 @@ const users = {
             id: Date.now(),
             username: faker.name.findName()
         };
-        console.log(user)
         this.users.push(user);
-        console.log(this.users)
-        this.$emit("user", this.users[0].username);
       }
     },
     template: `
@@ -36,6 +33,7 @@ const users = {
       </div>
       <div class="card-body contacts_body">
         <ul class="contacts">
+          <p v-if="!users.length" class="empty_chat">Personne n'est connectée</p>
           <li v-for="user in users"> 
             <user :user="user"></user>
           </li>

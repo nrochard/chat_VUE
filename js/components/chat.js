@@ -2,16 +2,10 @@ import message from "./message.js";
 import users from "./users.js";
 
 const chat = {
-  data() {
-    return {
-      myUser : ""
-    };
-  },
   components: {
     users,
     message
   },
-
   template: `
   <div class="container-fluid middle_center">
     <div class="row justify-content-center h-100">

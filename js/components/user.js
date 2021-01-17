@@ -1,9 +1,4 @@
 const user = {
-    data() {
-      return {
-        users : [],
-      };
-    },
     props: ["user"],
     template: `
       <div class="d-flex bd-highlight">

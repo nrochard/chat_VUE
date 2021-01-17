@@ -1,11 +1,5 @@
 const notification = {
-  methods: {
-
-  },
-  mounted(){
-
-  },
-  props: ['username'],
+  props: ['newUser'],
   template: `
   <div class="container alert alert-light" role="alert">
   Un nouvel arrivant vient de nous rejoindre !

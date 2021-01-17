@@ -5,7 +5,6 @@ import notification from "./components/notification.js";
 Vue.createApp({
   data(){
     return {
-      newUser : "",
       users : {}
     }
   },
@@ -16,14 +15,15 @@ Vue.createApp({
   mounted(){
     setInterval(function()
     {
+      
       let notification = document.querySelector('#notification');
       notification.style.display = "block";
 
       setTimeout(function(){
         notification.style.display = "none";
-      },2000)
+      },3000)
 
-    }, 5000);
+    }, 7000);
   },
 }).mount("#app");
 
