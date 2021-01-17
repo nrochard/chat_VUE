@@ -21,9 +21,9 @@ Vue.createApp({
 
       setTimeout(function(){
         notification.style.display = "none";
-      },3000)
+      },2000)
 
-    }, 7000);
+    }, 5000);
   },
 }).mount("#app");
 

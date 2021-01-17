@@ -10,7 +10,7 @@ const users = {
       user
     },
     mounted(){
-      setInterval(this.connectedUser, 7000);
+      setInterval(this.connectedUser, 5000);
     },
     methods: {
       connectedUser() {
