@@ -3,10 +3,26 @@ import user from "./user.js";
 const users = {
     data() {
       return {
+        users : [],
       };
     },
     components: {
       user
+    },
+    mounted(){
+      setInterval(this.connectedUser, 5000);
+    },
+    methods: {
+      connectedUser() {
+        const user = {
+            id: Date.now(),
+            username: faker.name.findName()
+        };
+        console.log(user)
+        this.users.push(user);
+        console.log(this.users)
+        this.$emit("user", this.users[0].username);
+      }
     },
     template: `
     <div class="card mb-sm-3 mb-md-0 contacts_card">
@@ -20,54 +36,8 @@ const users = {
       </div>
       <div class="card-body contacts_body">
         <ul class="contacts">
-          <user></user>
-          <li>
-            <div class="d-flex bd-highlight">
-              <div class="img_cont">
-                <img src="img/account.png" class="rounded-circle user_img">
-                <span class="online_icon offline"></span>
-              </div>
-              <div class="user_info">
-                <span>Thomas</span>
-                <p>Thomas est déconnecté depuis 7 minutes</p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="d-flex bd-highlight">
-              <div class="img_cont">
-                <img src="img/account.png" class="rounded-circle user_img">
-                <span class="online_icon"></span>
-              </div>
-              <div class="user_info">
-                <span>Émilie</span>
-                <p>Émilie est en ligne</p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="d-flex bd-highlight">
-              <div class="img_cont">
-                <img src="img/account.png" class="rounded-circle user_img">
-                <span class="online_icon offline"></span>
-              </div>
-              <div class="user_info">
-                <span>Raphaël</span>
-                <p>Raphaël est déconnecté depuis 30 minutes</p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="d-flex bd-highlight">
-              <div class="img_cont">
-                <img src="img/account.png" class="rounded-circle user_img">
-                <span class="online_icon offline"></span>
-              </div>
-              <div class="user_info">
-                <span>Nicolas</span>
-                <p>Nicolas est déconnecté depuis 50 minutes</p>
-              </div>
-            </div>
+          <li v-for="user in users"> 
+            <user :user="user"></user>
           </li>
         </ul>
       </div>

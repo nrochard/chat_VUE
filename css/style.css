@@ -437,3 +437,7 @@ ul .nav-item:nth-child(4){
     font-weight: 500;
     display: none;
 }
+
+.container .card {
+    height: auto !important;
+}

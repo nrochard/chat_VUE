@@ -5,9 +5,10 @@ const notification = {
   mounted(){
 
   },
+  props: ['username'],
   template: `
   <div class="container alert alert-light" role="alert">
-    Caroline vient de nous rejoindre !
+  {{ username }} vient de nous rejoindre !
   </div>
   `,
 };
