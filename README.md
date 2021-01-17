@@ -27,3 +27,9 @@ In this chat you can :
 
     
 5. Open a browser and go to localhost:8089
+
+## What it looks like
+
+<p align="center">
+  <img width="750" height="420" src="https://github.com/nrochard/chat_VUE/blob/master/img/screen.png">
+</p>
