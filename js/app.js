@@ -2,7 +2,8 @@ import chat from "./components/chat.js";
 import notification from "./components/notification.js";
 
 
-Vue.createApp({
+
+const app = Vue.createApp({
   data(){
     return {
       users : {}
@@ -15,7 +16,6 @@ Vue.createApp({
   mounted(){
     setInterval(function()
     {
-      
       let notification = document.querySelector('#notification');
       notification.style.display = "block";
 
@@ -25,5 +25,7 @@ Vue.createApp({
 
     }, 5000);
   },
-}).mount("#app");
+})
+app.config.globalProperties.$bus = mitt();
+app.mount("#app");
 

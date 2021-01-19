@@ -19,6 +19,7 @@ const users = {
             username: faker.name.findName()
         };
         this.users.push(user);
+        this.$bus.emit("newUser", user.username);
       }
     },
     template: `
